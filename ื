@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dual Portfolio Showcase | แฟ้มสะสมผลงาน</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Prompt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandYellow: '#FFD13F',
+                        brandRed: '#C3002F',
+                        brandRedDark: '#990024',
+                        darkText: '#1E293B',
+                        lightBg: '#FAFAFA'
+                    },
+                    fontFamily: {
+                        sans: ['Prompt', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: #FAFAFA;
+            color: #1E293B;
+        }
+        .yellow-gradient {
+            background: linear-gradient(135deg, #FFD13F 0%, #FBBF24 100%);
+        }
+        .red-gradient {
+            background: linear-gradient(135deg, #C3002F 0%, #990024 100%);
+        }
+        .badge-shadow {
+            box-shadow: 4px 4px 0px 0px #1E293B;
+        }
+        .card-hover-effect {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -5px rgba(195, 0, 47, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-lightBg text-darkText antialiased">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 w-full bg-white/90 backdrop-blur-md border-b-2 border-brandYellow shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <span class="w-10 h-10 rounded-xl red-gradient flex items-center justify-center text-brandYellow font-bold text-xl shadow-md">
+                    P
+                </span>
+                <span class="font-bold text-xl sm:text-2xl tracking-tight text-darkText">
+                    PORTFOLIO<span class="text-brandRed">.</span>
+                </span>
+            </div>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-base font-medium">
+                <a href="#hero" class="hover:text-brandRed transition-colors">หน้าแรก</a>
+                <a href="#about" class="hover:text-brandRed transition-colors">ประวัติส่วนตัว</a>
+                <a href="#inspiration" class="hover:text-brandRed transition-colors">แรงบันดาลใจ</a>
+                <a href="#duo-showcase" class="hover:text-brandRed transition-colors">โชว์เคส 2 คน</a>
+                <a href="#gallery" class="hover:text-brandRed transition-colors">ผลงาน</a>
+                <a href="#contact" class="px-5 py-2.5 rounded-full red-gradient text-white font-medium hover:opacity-90 transition-all shadow-md hover:shadow-lg">
+                    ติดต่อเรา
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg text-darkText hover:text-brandRed focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b-2 border-brandYellow px-4 pt-2 pb-6 space-y-3">
+            <a href="#hero" class="mobile-nav-link block py-2 text-darkText hover:text-brandRed font-medium">หน้าแรก</a>
+            <a href="#about" class="mobile-nav-link block py-2 text-darkText hover:text-brandRed font-medium">ประวัติส่วนตัว</a>
+            <a href="#inspiration" class="mobile-nav-link block py-2 text-darkText hover:text-brandRed font-medium">แรงบันดาลใจ</a>
+            <a href="#duo-showcase" class="mobile-nav-link block py-2 text-darkText hover:text-brandRed font-medium">โชว์เคส 2 คน</a>
+            <a href="#gallery" class="mobile-nav-link block py-2 text-darkText hover:text-brandRed font-medium">ผลงาน</a>
+            <a href="#contact" class="mobile-nav-link block py-2.5 text-center rounded-xl red-gradient text-white font-medium">ติดต่อเรา</a>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section -->
+    <section id="hero" class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-brandYellow/30 border border-brandYellow text-darkText text-sm font-semibold">
+                        <span class="w-2.5 h-2.5 rounded-full bg-brandRed animate-pulse"></span>
+                        <span>ยินดีต้อนรับสู่พื้นที่สะสมผลงาน</span>
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-darkText leading-tight">
+                        สร้างสรรค์ผลงานด้วย <br class="hidden sm:inline">
+                        <span class="relative inline-block mt-1">
+                            <span class="relative z-10 text-brandRed">ความหลงใหล</span>
+                            <span class="absolute bottom-2 left-0 w-full h-3 bg-brandYellow/60 -z-0"></span>
+                        </span> 
+                        และมุ่งมั่นสู่ความสำเร็จ
+                    </h1>
+
+                    <p class="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 font-light">
+                        รวบรวมชิ้นงานสร้างสรรค์ โปรเจกต์ที่ภาคภูมิใจ และเรื่องราวแรงบันดาลใจในการทำงานของพวกเราไว้ในที่เดียว
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#duo-showcase" class="w-full sm:w-auto px-8 py-4 rounded-xl red-gradient text-white font-semibold shadow-lg hover:shadow-red-500/30 hover:scale-105 transition-all text-center">
+                            ดูผลงานไฮไลต์ <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#about" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white border-2 border-brandYellow text-darkText font-semibold hover:bg-brandYellow/20 transition-all text-center">
+                            เกี่ยวกับเรา
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 relative flex justify-center">
+                    <!-- Hero Visual / Decorative Frame -->
+                    <div class="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96">
+                        <div class="absolute inset-0 rounded-3xl bg-brandYellow transform rotate-6 border-4 border-slate-900 shadow-xl"></div>
+                        <div class="absolute inset-0 rounded-3xl red-gradient transform -rotate-3 border-4 border-slate-900 shadow-xl"></div>
+                        <div class="absolute inset-0 rounded-3xl bg-white border-4 border-slate-900 overflow-hidden flex flex-col justify-between p-6 shadow-2xl">
+                            <div class="flex justify-between items-center">
+                                <span class="px-3 py-1 bg-brandYellow font-bold text-xs rounded-md badge-shadow">DUAL SHOWCASE</span>
+                                <i class="fa-solid fa-sparkles text-brandRed text-xl"></i>
+                            </div>
+                            <div class="my-auto text-center space-y-2">
+                                <div class="text-5xl font-black text-slate-900">2 CREATORS</div>
+                                <div class="text-brandRed font-semibold">1 PASSION FOR CREATIVITY</div>
+                            </div>
+                            <div class="flex justify-around pt-4 border-t border-slate-200">
+                                <div class="text-center">
+                                    <p class="text-2xl font-bold text-slate-900">100%</p>
+                                    <p class="text-xs text-slate-500">Dedication</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="text-2xl font-bold text-brandRed">20+</p>
+                                    <p class="text-xs text-slate-500">Projects</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Personal Profile (ประวัติส่วนตัว) -->
+    <section id="about" class="py-16 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brandRed font-bold text-sm tracking-widest uppercase">ABOUT US</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-darkText mt-1">ประวัติและความเป็นมา</h2>
+                <div class="w-20 h-1.5 bg-brandYellow mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Person 1 Brief Profile -->
+                <div class="bg-lightBg rounded-2xl p-6 sm:p-8 border-2 border-slate-200 hover:border-brandYellow transition-all relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-brandYellow/20 rounded-bl-full -z-0"></div>
+                    <div class="relative z-10 flex flex-col sm:flex-row items-center sm:items-start gap-6">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" 
+                             alt="Creator 1" 
+                             class="w-28 h-28 rounded-2xl object-cover border-4 border-brandYellow shadow-md flex-shrink-0">
+                        <div class="text-center sm:text-left">
+                            <h3 class="text-2xl font-bold text-darkText">ณิชาภัทร วงศ์สวัสดิ์</h3>
+                            <p class="text-brandRed font-medium">Lead UI/UX Designer & Graphic Artist</p>
+                            <p class="mt-3 text-slate-600 text-sm leading-relaxed">
+                                มุ่งมั่นในการสร้างสรรค์งานออกแบบที่มีผู้ใช้เป็นศูนย์กลาง ผสมผสานความสวยงามและฟังก์ชันการใช้งานเข้าด้วยกันอย่างลงตัว
+                            </p>
+                            <div class="mt-4 flex flex-wrap justify-center sm:justify-start gap-2">
+                                <span class="px-2.5 py-1 bg-white border border-slate-300 rounded-lg text-xs font-medium">UI/UX Design</span>
+                                <span class="px-2.5 py-1 bg-white border border-slate-300 rounded-lg text-xs font-medium">Branding</span>
+                                <span class="px-2.5 py-1 bg-white border border-slate-300 rounded-lg text-xs font-medium">Figma</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Person 2 Brief Profile -->
+                <div class="bg-lightBg rounded-2xl p-6 sm:p-8 border-2 border-slate-200 hover:border-brandRed transition-all relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-brandRed/10 rounded-bl-full -z-0"></div>
+                    <div class="relative z-10 flex flex-col sm:flex-row items-center sm:items-start gap-6">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" 
+                             alt="Creator 2" 
+                             class="w-28 h-28 rounded-2xl object-cover border-4 border-brandRed shadow-md flex-shrink-0">
+                        <div class="text-center sm:text-left">
+                            <h3 class="text-2xl font-bold text-darkText">ธนกฤต ชัยเจริญ</h3>
+                            <p class="text-brandRed font-medium">Frontend Developer & Tech Lead</p>
+                            <p class="mt-3 text-slate-600 text-sm leading-relaxed">
+                                หลงใหลการเปลี่ยนงานออกแบบบนพิมพ์เขียวให้กลายเป็นเว็บไซต์และแอปพลิเคชันที่ใช้งานได้จริง ด้วยโค้ดที่มีประสิทธิภาพ
+                            </p>
+                            <div class="mt-4 flex flex-wrap justify-center sm:justify-start gap-2">
+                                <span class="px-2.5 py-1 bg-white border border-slate-300 rounded-lg text-xs font-medium">Web Dev</span>
+                                <span class="px-2.5 py-1 bg-white border border-slate-300 rounded-lg text-xs font-medium">JavaScript</span>
+                                <span class="px-2.5 py-1 bg-white border border-slate-300 rounded-lg text-xs font-medium">Tailwind CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Inspiration (แรงบันดาลใจ) -->
+    <section id="inspiration" class="py-16 bg-lightBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brandRed font-bold text-sm tracking-widest uppercase">INSPIRATION & PHILOSOPHY</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-darkText mt-1">แรงบันดาลใจและปรัชญาการทำงาน</h2>
+                <div class="w-20 h-1.5 bg-brandYellow mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Inspiration Card 1 -->
+                <div class="bg-white rounded-2xl p-8 border-2 border-slate-200 card-hover-effect flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl yellow-gradient flex items-center justify-center text-slate-900 text-2xl font-bold mb-6 badge-shadow">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-darkText mb-3">นวัตกรรมไร้ขีดจำกัด</h3>
+                        <p class="text-slate-600 leading-relaxed text-sm">
+                            เชื่อว่าทุกไอเดียมีคุณค่าและสามารถต่อยอดให้กลายเป็นผลงานที่ส่งผลกระทบเชิงบวกได้ การทดลองสิ่งใหม่ๆ คือหัวใจสำคัญของการเรียนรู้
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-brandRed">
+                        <span>CORE VALUE 01</span>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Inspiration Card 2 -->
+                <div class="bg-white rounded-2xl p-8 border-2 border-brandRed/30 card-hover-effect flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-brandRed text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg">PASSION</div>
+                    <div>
+                        <div class="w-14 h-14 rounded-xl red-gradient flex items-center justify-center text-white text-2xl font-bold mb-6 shadow-md">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-darkText mb-3">ใส่ใจในทุกรายละเอียด</h3>
+                        <p class="text-slate-600 leading-relaxed text-sm">
+                            รายละเอียดเล็กๆ คือสิ่งที่แยกงานธรรมดาออกจากงานที่ยอดเยี่ยม ความประณีตในการออกแบบและพัฒนาจึงเป็นสิ่งที่เรายึดมั่น
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-brandRed">
+                        <span>CORE VALUE 02</span>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Inspiration Card 3 -->
+                <div class="bg-white rounded-2xl p-8 border-2 border-slate-200 card-hover-effect flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl yellow-gradient flex items-center justify-center text-slate-900 text-2xl font-bold mb-6 badge-shadow">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-darkText mb-3">การทำงานร่วมกันอย่างสมบูรณ์แบบ</h3>
+                        <p class="text-slate-600 leading-relaxed text-sm">
+                            พลังของทีม 2 คนที่ส่งเสริมกันและกัน การผสานมุมมองทางศิลปะเข้ากับเทคโนโลยีเกิดเป็นผลงานที่มีความสมดุลและทรงพลัง
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-brandRed">
+                        <span>CORE VALUE 03</span>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Dual Featured Showcase (พื้นที่โชว์รูปของผลงาน 2 คน) -->
+    <section id="duo-showcase" class="py-20 bg-slate-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brandYellow font-bold text-sm tracking-widest uppercase">DUAL SHOWCASE</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">โชว์เคสผลงานสร้างสรรค์ 2 สไตล์</h2>
+                <p class="text-slate-400 mt-2 text-sm">เปรียบเทียบและรับชมผลงานชิ้นเอกของผู้สร้างสรรค์ทั้งสองคน</p>
+                <div class="w-20 h-1.5 bg-brandRed mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Two Person Grid Showcase -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Person 1 Showcase Block -->
+                <div class="bg-slate-800/80 rounded-3xl p-6 sm:p-8 border-2 border-brandYellow/40 relative flex flex-col justify-between">
+                    <div class="absolute -top-4 left-8 px-4 py-1 bg-brandYellow text-slate-900 font-bold text-xs rounded-full uppercase tracking-wider">
+                        Creator 01: Graphic & Design
+                    </div>
+
+                    <div>
+                        <!-- Creator Profile Header -->
+                        <div class="flex items-center space-x-4 mb-6 pt-2">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" 
+                                 alt="Nichapat" class="w-14 h-14 rounded-full object-cover border-2 border-brandYellow">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">ณิชาภัทร (Nicha)</h3>
+                                <p class="text-xs text-brandYellow">UI/UX & Brand Designer</p>
+                            </div>
+                        </div>
+
+                        <!-- Featured Showcase Image -->
+                        <div class="relative rounded-2xl overflow-hidden group mb-6 border border-slate-700">
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Showcase Person 1" 
+                                 class="w-full h-64 sm:h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent flex flex-col justify-end p-6">
+                                <span class="text-xs text-brandYellow font-semibold uppercase">Signature Project</span>
+                                <h4 class="text-lg font-bold text-white">Abstract Brand Identity Design</h4>
+                                <p class="text-xs text-slate-300 mt-1">งานออกแบบอัตลักษณ์แบรนด์ยุคใหม่ที่เน้นความเรียบง่ายแต่สะดุดตา</p>
+                            </div>
+                        </div>
+
+                        <!-- Sub Thumbnails / Mini Showcase -->
+                        <div class="grid grid-cols-3 gap-3">
+                            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=300&q=80" 
+                                 alt="Sub 1" class="rounded-xl h-20 w-full object-cover border border-slate-700">
+                            <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=300&q=80" 
+                                 alt="Sub 2" class="rounded-xl h-20 w-full object-cover border border-slate-700">
+                            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=300&q=80" 
+                                 alt="Sub 3" class="rounded-xl h-20 w-full object-cover border border-slate-700">
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-slate-700/60 flex items-center justify-between">
+                        <span class="text-xs text-slate-400"><i class="fa-solid fa-palette text-brandYellow mr-1"></i> Visual Arts</span>
+                        <a href="#gallery" class="text-xs font-semibold text-brandYellow hover:underline">ดูผลงานทั้งหมด <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+                    </div>
+                </div>
+
+                <!-- Person 2 Showcase Block -->
+                <div class="bg-slate-800/80 rounded-3xl p-6 sm:p-8 border-2 border-brandRed/40 relative flex flex-col justify-between">
+                    <div class="absolute -top-4 left-8 px-4 py-1 bg-brandRed text-white font-bold text-xs rounded-full uppercase tracking-wider">
+                        Creator 02: Web Development
+                    </div>
+
+                    <div>
+                        <!-- Creator Profile Header -->
+                        <div class="flex items-center space-x-4 mb-6 pt-2">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" 
+                                 alt="Thanakrit" class="w-14 h-14 rounded-full object-cover border-2 border-brandRed">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">ธนกฤต (Tee)</h3>
+                                <p class="text-xs text-brandRed">Frontend Developer</p>
+                            </div>
+                        </div>
+
+                        <!-- Featured Showcase Image -->
+                        <div class="relative rounded-2xl overflow-hidden group mb-6 border border-slate-700">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Showcase Person 2" 
+                                 class="w-full h-64 sm:h-72 object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent flex flex-col justify-end p-6">
+                                <span class="text-xs text-brandRed font-semibold uppercase">Signature Project</span>
+                                <h4 class="text-lg font-bold text-white">Interactive Web Application</h4>
+                                <p class="text-xs text-slate-300 mt-1">ระบบเว็บแอปพลิเคชันที่มีการโต้ตอบแบบเรียลไทม์ พร้อมดีไซน์ลื่นไหล</p>
+                            </div>
+                        </div>
+
+                        <!-- Sub Thumbnails / Mini Showcase -->
+                        <div class="grid grid-cols-3 gap-3">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=300&q=80" 
+                                 alt="Sub 1" class="rounded-xl h-20 w-full object-cover border border-slate-700">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=300&q=80" 
+                                 alt="Sub 2" class="rounded-xl h-20 w-full object-cover border border-slate-700">
+                            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=300&q=80" 
+                                 alt="Sub 3" class="rounded-xl h-20 w-full object-cover border border-slate-700">
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-slate-700/60 flex items-center justify-between">
+                        <span class="text-xs text-slate-400"><i class="fa-solid fa-code text-brandRed mr-1"></i> Engineering</span>
+                        <a href="#gallery" class="text-xs font-semibold text-brandRed hover:underline">ดูผลงานทั้งหมด <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Portfolio Collection (แฟ้มสะสมผลงาน) -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brandRed font-bold text-sm tracking-widest uppercase">PORTFOLIO GALLERY</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-darkText mt-1">แฟ้มสะสมผลงานทั้งหมด</h2>
+                <div class="w-20 h-1.5 bg-brandYellow mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button class="filter-btn px-5 py-2 rounded-full font-medium text-sm transition-all bg-brandRed text-white shadow-md" data-filter="all">
+                    ทั้งหมด
+                </button>
+                <button class="filter-btn px-5 py-2 rounded-full font-medium text-sm transition-all bg-slate-100 text-slate-700 hover:bg-brandYellow/30" data-filter="nicha">
+                    ผลงาน ณิชาภัทร (Design)
+                </button>
+                <button class="filter-btn px-5 py-2 rounded-full font-medium text-sm transition-all bg-slate-100 text-slate-700 hover:bg-brandYellow/30" data-filter="tee">
+                    ผลงาน ธนกฤต (Dev)
+                </button>
+                <button class="filter-btn px-5 py-2 rounded-full font-medium text-sm transition-all bg-slate-100 text-slate-700 hover:bg-brandYellow/30" data-filter="joint">
+                    ผลงานร่วม (Collaborations)
+                </button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="galleryGrid">
+                
+                <!-- Item 1 (Nicha) -->
+                <div class="portfolio-item bg-lightBg rounded-2xl overflow-hidden border-2 border-slate-200 card-hover-effect" data-category="nicha">
+                    <div class="relative overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1542744094-3a31727223ec?auto=format&fit=crop&w=600&q=80" 
+                             alt="Mobile App UX" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button onclick="openModal('Mobile App UI/UX Redesign', 'ณิชาภัทร วงศ์สวัสดิ์', 'การออกแบบปรับปรุงประสบการณ์ผู้ใช้งานแอปพลิเคชันเพื่อสุขภาพ เน้นความง่ายในการเข้าถึงข้อมูล', 'https://images.unsplash.com/photo-1542744094-3a31727223ec?auto=format&fit=crop&w=800&q=80')" 
+                                    class="px-4 py-2 bg-brandYellow text-slate-900 font-bold text-xs rounded-lg shadow-md hover:scale-105 transition-transform">
+                                <i class="fa-solid fa-eye mr-1"></i> รายละเอียด
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold px-2.5 py-1 bg-brandYellow/30 text-darkText rounded-md">UI/UX Design</span>
+                        <h3 class="text-lg font-bold text-darkText mt-3">Mobile App UI/UX Redesign</h3>
+                        <p class="text-slate-500 text-xs mt-1">เจ้าของผลงาน: ณิชาภัทร</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 (Tee) -->
+                <div class="portfolio-item bg-lightBg rounded-2xl overflow-hidden border-2 border-slate-200 card-hover-effect" data-category="tee">
+                    <div class="relative overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" 
+                             alt="E-commerce Platform" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button onclick="openModal('E-Commerce Dashboard System', 'ธนกฤต ชัยเจริญ', 'ระบบแดชบอร์ดจัดการร้านค้าออนไลน์ พัฒนาด้วย React และ Tailwind CSS รองรับข้อมูลขนาดใหญ่', 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80')" 
+                                    class="px-4 py-2 bg-brandYellow text-slate-900 font-bold text-xs rounded-lg shadow-md hover:scale-105 transition-transform">
+                                <i class="fa-solid fa-eye mr-1"></i> รายละเอียด
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold px-2.5 py-1 bg-brandRed/10 text-brandRed rounded-md">Web Development</span>
+                        <h3 class="text-lg font-bold text-darkText mt-3">E-Commerce Dashboard</h3>
+                        <p class="text-slate-500 text-xs mt-1">เจ้าของผลงาน: ธนกฤต</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 (Joint) -->
+                <div class="portfolio-item bg-lightBg rounded-2xl overflow-hidden border-2 border-slate-200 card-hover-effect" data-category="joint">
+                    <div class="relative overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=600&q=80" 
+                             alt="Creative Platform" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button onclick="openModal('Smart Event Web Platform', 'ณิชาภัทร & ธนกฤต', 'โปรเจกต์ร่วมในการออกแบบและพัฒนาเว็บไซต์จองตั๋วอีเวนต์ออนไลน์แบบครบวงจร', 'https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=800&q=80')" 
+                                    class="px-4 py-2 bg-brandYellow text-slate-900 font-bold text-xs rounded-lg shadow-md hover:scale-105 transition-transform">
+                                <i class="fa-solid fa-eye mr-1"></i> รายละเอียด
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold px-2.5 py-1 bg-slate-900 text-white rounded-md">Collaborative</span>
+                        <h3 class="text-lg font-bold text-darkText mt-3">Smart Event Platform</h3>
+                        <p class="text-slate-500 text-xs mt-1">เจ้าของผลงาน: ณิชาภัทร & ธนกฤต</p>
+                    </div>
+                </div>
+
+                <!-- Item 4 (Nicha) -->
+                <div class="portfolio-item bg-lightBg rounded-2xl overflow-hidden border-2 border-slate-200 card-hover-effect" data-category="nicha">
+                    <div class="relative overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=600&q=80" 
+                             alt="Brand Book" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button onclick="openModal('Coffee Shop Branding Guidelines', 'ณิชาภัทร วงศ์สวัสดิ์', 'คู่มืออัตลักษณ์แบรนด์สำหรับร้านกาแฟคราฟต์ รวมถึงโลโก้ โทนสี และบรรจุภัณฑ์', 'https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80')" 
+                                    class="px-4 py-2 bg-brandYellow text-slate-900 font-bold text-xs rounded-lg shadow-md hover:scale-105 transition-transform">
+                                <i class="fa-solid fa-eye mr-1"></i> รายละเอียด
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold px-2.5 py-1 bg-brandYellow/30 text-darkText rounded-md">Branding</span>
+                        <h3 class="text-lg font-bold text-darkText mt-3">Coffee Shop Branding</h3>
+                        <p class="text-slate-500 text-xs mt-1">เจ้าของผลงาน: ณิชาภัทร</p>
+                    </div>
+                </div>
+
+                <!-- Item 5 (Tee) -->
+                <div class="portfolio-item bg-lightBg rounded-2xl overflow-hidden border-2 border-slate-200 card-hover-effect" data-category="tee">
+                    <div class="relative overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80" 
+                             alt="API Architecture" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button onclick="openModal('Real-time Analytics API Integration', 'ธนกฤต ชัยเจริญ', 'การเชื่อมต่อ API แสดงผลข้อมูลการทำงานของระบบแบบเรียลไทม์ด้วย Graph & Chart', 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80')" 
+                                    class="px-4 py-2 bg-brandYellow text-slate-900 font-bold text-xs rounded-lg shadow-md hover:scale-105 transition-transform">
+                                <i class="fa-solid fa-eye mr-1"></i> รายละเอียด
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold px-2.5 py-1 bg-brandRed/10 text-brandRed rounded-md">Frontend Architecture</span>
+                        <h3 class="text-lg font-bold text-darkText mt-3">Real-time Analytics Dashboard</h3>
+                        <p class="text-slate-500 text-xs mt-1">เจ้าของผลงาน: ธนกฤต</p>
+                    </div>
+                </div>
+
+                <!-- Item 6 (Joint) -->
+                <div class="portfolio-item bg-lightBg rounded-2xl overflow-hidden border-2 border-slate-200 card-hover-effect" data-category="joint">
+                    <div class="relative overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80" 
+                             alt="Startup Landing Page" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button onclick="openModal('Tech Startup Landing Page', 'ณิชาภัทร & ธนกฤต', 'หน้าแลนดิ้งเพจส่งเสริมการขายบริษัทเทคโนโลยี ผสมผสานดีไซน์ล้ำสมัยเข้ากับการเขียนโค้ดที่รวดเร็ว', 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80')" 
+                                    class="px-4 py-2 bg-brandYellow text-slate-900 font-bold text-xs rounded-lg shadow-md hover:scale-105 transition-transform">
+                                <i class="fa-solid fa-eye mr-1"></i> รายละเอียด
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold px-2.5 py-1 bg-slate-900 text-white rounded-md">Collaborative</span>
+                        <h3 class="text-lg font-bold text-darkText mt-3">Tech Startup Landing Page</h3>
+                        <p class="text-slate-500 text-xs mt-1">เจ้าของผลงาน: ณิชาภัทร & ธนกฤต</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Contact & Footer -->
+    <section id="contact" class="py-16 bg-lightBg border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl p-8 sm:p-12 border-2 border-slate-200 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-6 space-y-4">
+                    <span class="px-3 py-1 bg-brandYellow text-slate-900 font-bold text-xs rounded-md badge-shadow">GET IN TOUCH</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-darkText">สนใจร่วมงานกับพวกเรา?</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        พวกเราพร้อมที่จะนำเอาความคิดสร้างสรรค์และทักษะทางเทคโนโลยีมาช่วยพัฒนาโปรเจกต์ของคุณ สามารถส่งข้อความหาพวกเราได้เลย
+                    </p>
+
+                    <div class="space-y-3 pt-4">
+                        <div class="flex items-center space-x-3 text-slate-700 text-sm">
+                            <span class="w-9 h-9 rounded-lg red-gradient flex items-center justify-center text-white"><i class="fa-solid fa-envelope"></i></span>
+                            <span>contact@dualportfolio.com</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-slate-700 text-sm">
+                            <span class="w-9 h-9 rounded-lg yellow-gradient flex items-center justify-center text-slate-900 font-bold"><i class="fa-solid fa-phone"></i></span>
+                            <span>+66 81 234 5678</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-darkText mb-1 uppercase">ชื่อของคุณ</label>
+                            <input type="text" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:border-brandRed text-sm" placeholder="กรอกชื่อ-นามสกุล">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-darkText mb-1 uppercase">อีเมล</label>
+                            <input type="email" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:border-brandRed text-sm" placeholder="yourname@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-darkText mb-1 uppercase">ข้อความ</label>
+                            <textarea rows="3" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:border-brandRed text-sm" placeholder="รายละเอียดโปรเจกต์ที่ต้องการสอบถาม..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3.5 rounded-xl red-gradient text-white font-bold text-sm shadow-md hover:opacity-90 transition-all">
+                            ส่งข้อความ <i class="fa-solid fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-2">
+                <span class="w-7 h-7 rounded-lg red-gradient flex items-center justify-center text-brandYellow font-bold text-xs">P</span>
+                <span class="font-bold tracking-tight">DUAL PORTFOLIO</span>
+            </div>
+            <p class="text-xs text-slate-400">© 2026 Dual Portfolio. All rights reserved.</p>
+            <div class="flex space-x-4">
+                <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:text-brandYellow transition-colors"><i class="fa-brands fa-github text-sm"></i></a>
+                <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:text-brandYellow transition-colors"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+                <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:text-brandYellow transition-colors"><i class="fa-brands fa-behance text-sm"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Detail Window -->
+    <div id="portfolioModal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl border-2 border-brandYellow transform transition-all">
+            <div class="relative">
+                <img id="modalImg" src="" alt="Project Image" class="w-full h-64 object-cover">
+                <button onclick="closeModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-900/80 text-white flex items-center justify-center hover:bg-brandRed transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-6 sm:p-8">
+                <h3 id="modalTitle" class="text-2xl font-bold text-darkText">Title</h3>
+                <p id="modalAuthor" class="text-xs font-semibold text-brandRed mt-1">Author</p>
+                <div class="w-12 h-1 bg-brandYellow my-4"></div>
+                <p id="modalDesc" class="text-slate-600 text-sm leading-relaxed">Description</p>
+                
+                <div class="mt-6 pt-4 border-t border-slate-100 flex justify-end">
+                    <button onclick="closeModal()" class="px-5 py-2.5 rounded-xl bg-slate-200 text-darkText font-semibold text-xs hover:bg-slate-300 transition-colors">
+                        ปิดหน้าต่าง
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Portfolio Category Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active styling from all buttons
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-brandRed', 'text-white', 'shadow-md');
+                    b.classList.add('bg-slate-100', 'text-slate-700');
+                });
+
+                // Add active style to selected button
+                btn.classList.remove('bg-slate-100', 'text-slate-700');
+                btn.classList.add('bg-brandRed', 'text-white', 'shadow-md');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                portfolioItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Modal Functionality
+        function openModal(title, author, desc, imgSrc) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalAuthor').innerText = 'เจ้าของผลงาน: ' + author;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('modalImg').src = imgSrc;
+            
+            const modal = document.getElementById('portfolioModal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('portfolioModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on background click
+        document.getElementById('portfolioModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Contact Form Handler
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            alert('ขอบคุณสำหรับข้อความ! พวกเราจะติดต่อกลับโดยเร็วที่สุดครับ');
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
